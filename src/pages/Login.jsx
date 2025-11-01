@@ -8,7 +8,7 @@ export function Login() {
     return (
         <>
             <Container>
-                <Navbar bg="dark" data-bs-theme="dark">
+                <Navbar className="mb-3" bg="dark" data-bs-theme="dark">
                     <Container>
                         <Navbar.Brand href="#">Minha App</Navbar.Brand>
                     </Container>
