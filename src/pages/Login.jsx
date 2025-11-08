@@ -5,6 +5,19 @@ import Form from 'react-bootstrap/Form';
 import Card from 'react-bootstrap/Card';
 
 export function Login() {
+    const handleSubmit = (event) => {
+        event.preventDefault();
+
+        const email = event.target.elements.email.value.trim();
+        const password = event.target.elements.password.value.trim();
+
+        if (email && password) {
+            // trocar a flag isLogged para true
+            // vamos redirecionar para /dashboard
+        }
+
+    }
+
     return (
         <>
             <Container>
@@ -17,15 +30,15 @@ export function Login() {
             <Container>
                 <Card>
                     <Card.Body>
-                        <Form>
+                        <Form onSubmit={handleSubmit}>
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Form.Label>Email</Form.Label>
-                                <Form.Control type="email" placeholder="Enter email" />
+                                <Form.Control type="email" name="email" placeholder="Enter email" />
                             </Form.Group>
 
                             <Form.Group className="mb-3" controlId="formBasicPassword">
                                 <Form.Label>Senha</Form.Label>
-                                <Form.Control type="password" placeholder="Password" />
+                                <Form.Control type="password" name="password" placeholder="Password" />
                             </Form.Group>
                             <Button variant="primary" type="submit">
                                 Entrar
