@@ -4,7 +4,13 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Card from 'react-bootstrap/Card';
 
+import { useAuth } from "../contexts/AuthContext.jsx";
+import { useNavigate } from "react-router";
+
 export function Login() {
+    const { doLogin } = useAuth();
+    const navigate = useNavigate();
+
     const handleSubmit = (event) => {
         event.preventDefault();
 
@@ -13,7 +19,9 @@ export function Login() {
 
         if (email && password) {
             // trocar a flag isLogged para true
+            doLogin();
             // vamos redirecionar para /dashboard
+            navigate("/dashboard");
         }
 
     }
